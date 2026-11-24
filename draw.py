@@ -175,6 +175,14 @@ def build_layout(draw, scale):
     ops.append(("ticker", ticker_lines, ticker_font, ticker_line_h, pad, ticker_h))
     total += ticker_h
 
+    # --- Footer ------------------------------------------------------
+    total += add_gap(int(10 * s))
+    total += add_rule(1, gap_after=int(9 * s))
+    total += add_block(
+        "Front page rendered from the day's verified headlines "
+        "\u00b7 Tuesday 24 November 2026",
+        font(SANS, 14 * s), int(19 * s), align="center", color=MUTED)
+
     return ops, total
 
 
